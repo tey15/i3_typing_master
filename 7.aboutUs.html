@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypingMaster Pro - About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4ECDC4;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #4ECDC4;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            background: transparent;
+            border: 2px solid #4ECDC4;
+            color: #4ECDC4;
+        }
+
+        .btn-signup {
+            background: #4ECDC4;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .about-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .content-card h3 {
+            color: #4ECDC4;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content-card p {
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4ECDC4;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Team Section */
+        .team-section {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .team-title {
+            font-size: 2.5rem;
+            color: #4ECDC4;
+            margin-bottom: 40px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            color: #4ECDC4;
+            margin-bottom: 10px;
+        }
+
+        .member-role {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .about-title {
+                font-size: 2.5rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">🎯 TypingMaster Pro</div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#typing-test">Typing Test</a></li>
+                        <li><a href="#test-results">Test Results</a></li>
+                        <li><a href="#about" class="active">About Us</a></li>
+                        <li><a href="#reset">Reset Password</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-buttons">
+                    <a href="#login" class="btn btn-login">Login</a>
+                    <a href="#signup" class="btn btn-signup">Signup</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <h1 class="about-title">About TypingMaster Pro</h1>
+                <p class="about-subtitle">
+                    We're passionate about helping people improve their typing skills through innovative technology and engaging practice methods. Our mission is to make typing mastery accessible to everyone.
+                </p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Our Mission</h3>
+                    <p>
+                        To revolutionize the way people learn and master typing skills through cutting-edge technology, personalized learning experiences, and comprehensive progress tracking. We believe that excellent typing skills are essential in today's digital world.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become the world's leading platform for typing education, empowering millions of users to achieve their full potential in digital communication and productivity. We envision a world where everyone types with confidence and efficiency.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Why Choose Us</h3>
+                    <p>
+                        Advanced algorithms, real-time feedback, comprehensive analytics, and a user-friendly interface set us apart. Our platform adapts to your learning style and provides personalized recommendations for continuous improvement.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Our Technology</h3>
+                    <p>
+                        Built with modern web technologies and powered by intelligent algorithms that analyze your typing patterns, identify weaknesses, and provide targeted exercises to help you improve faster than traditional methods.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">500K+</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10M+</div>
+                            <div class="stat-label">Tests Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Improvement Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="team-section">
+                <h2 class="team-title">Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">JD</div>
+                        <div class="member-name">John Davis</div>
+                        <div class="member-role">Founder & CEO</div>
+                        <div class="member-bio">
+                            Passionate about education technology with 10+ years of experience in developing learning platforms.
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">SM</div>
+                        <div class="member-name">Sarah Miller</div>
+                        <div class="member-role">Head of Product</div>
+                        <div class="member-bio">
+                            Expert in user experience design and product development, focused on creating intuitive learning experiences.
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">MJ</div>
+                        <div class="member-name">Mike Johnson</div>
+                        <div class="member-role">Lead Developer</div>
+                        <div class="member-bio">
+                            Full-stack developer specializing in real-time applications and performance optimization.
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">LW</div>
+                        <div class="member-name">Lisa Wang</div>
+                        <div class="member-role">Data Scientist</div>
+                        <div class="member-bio">
+                            Analytics expert developing intelligent algorithms to personalize learning experiences.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
