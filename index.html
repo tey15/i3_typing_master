@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <nav>
+        <div class="nav-container">
+            <div class="logo">TypingMaster Pro</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="typing-test.html">Typing Test</a></li>
+                <li><a href="results.html">Test Results</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="resetpassword.html">Reset Password</a></li>
+                
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="registration.html" class="btn-register">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Master Your Typing Skills</h1>
+                    <p>Improve your typing speed and accuracy with our advanced typing test platform. Track your progress, compete with others, and become a typing master!</p>
+                    
+                    <div class="typing-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">WPM Possible</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Accuracy Goal</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Practice Tests</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Available</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2 text-center">
+                        <a href="typing-test.html" class="btn-primary">Start Typing Test</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="page-section">
+        <div class="auth-container">
+            <div class="auth-form">
+                <h2>Register</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="reg-username">Username</label>
+                        <input type="text" id="reg-username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-confirm">Confirm Password</label>
+                        <input type="password" id="reg-confirm" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Create Account</button>
+                </form>
+                <p style="margin-top: 1rem; color: rgba(255,255,255,0.6);">
+                    Already have an account? <a href="login.html" style="color: #00ff88;">Login here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="login" class="page-section">
+        <div class="auth-container">
+            <div class="auth-form">
+                <h2>Login</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">Email or Username</label>
+                        <input type="text" id="login-email" placeholder="Enter your email or username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+                <p style="margin-top: 1rem; color: rgba(255,255,255,0.6);">
+                    Don't have an account? <a href="registration.html" style="color: #00ff88;">Register here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="typing" class="page-section">
+        <div class="typing-container">
+            <div class="typing-header">
+                <h2>Typing Speed Test</h2>
+                <p>Test your typing skills and improve your speed and accuracy</p>
+            </div>
+
+            <div class="test-settings">
+                <div class="setting-group">
+                    <label>Test Duration</label>
+                    <select id="test-duration">
+                        <option value="30">30 seconds</option>
+                        <option value="60" selected>1 minute</option>
+                        <option value="120">2 minutes</option>
+                        <option value="300">5 minutes</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>Difficulty</label>
+                    <select id="test-difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="typing-stats-live">
+                <div class="live-stat">
+                    <div class="live-stat-number" id="wpm-counter">0</div>
+                    <div class="live-stat-label">WPM</div>
+                </div>
+                <div class="live-stat">
+                    <div class="live-stat-number" id="accuracy-counter">100%</div>
+                    <div class="live-stat-label">Accuracy</div>
+                </div>
+                <div class="live-stat">
+                    <div class="live-stat-number" id="time-counter">60</div>
+                    <div class="live-stat-label">Time Left</div>
+                </div>
+                <div class="live-stat">
+                    <div class="live-stat-number" id="errors-counter">0</div>
+                    <div class="live-stat-label">Errors</div>
+                </div>
+            </div>
+
+            <div class="typing-text-container">
+                <div class="typing-text" id="typing-text">
+                    The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once, making it perfect for typing practice. Regular practice with diverse texts will help improve your typing speed and accuracy significantly over time.
+                </div>
+            </div>
+
+            <textarea class="typing-input" id="typing-input" placeholder="Click here and start typing..." rows="4"></textarea>
+
+            <div class="typing-controls">
+                <button class="btn-control" id="start-btn" onclick="startTest()">Start Test</button>
+                <button class="btn-control" id="reset-btn" onclick="resetTest()">Reset</button>
+                <button class="btn-control" id="new-text-btn" onclick="generateNewText()">New Text</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="results" class="page-section">
+        <div class="results-container">
+            <div class="results-header">
+                <h2>Test Results</h2>
+                <p>Track your progress and see your typing improvement over time</p>
+            </div>
+
+            <div class="results-filters">
+                <button class="filter-btn active" onclick="filterResults('all')">All Tests</button>
+                <button class="filter-btn" onclick="filterResults('today')">Today</button>
+            </div>
+
+            <div class="results-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>WPM</th>
+                            <th>Accuracy</th>
+                            <th>Time</th>
+                            <th>Errors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-06-03</td>
+                            <td><span class="wpm-badge">75</span></td>
+                            <td><span class="accuracy-badge accuracy-high">98%</span></td>
+                            <td>60s</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>2025-06-02</td>
+                            <td><span class="wpm-badge">68</span></td>
+                            <td><span class="accuracy-badge accuracy-medium">92%</span></td>
+                            <td>60s</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>2025-06-01</td>
+                            <td><span class="wpm-badge">80</span></td>
+                            <td><span class="accuracy-badge accuracy-high">99%</span></td>
+                            <td>30s</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="page-section">
+        <div class="about-container">
+            <div class="about-header">
+                <h2>About TypingMaster Pro</h2>
+                <p>Learn more about our mission and features.</p>
+            </div>
+            <div class="about-content">
+                <p><strong>TypingMaster Pro</strong> is dedicated to helping individuals worldwide enhance their typing proficiency. Our platform provides a rich environment for practice, offering various test durations and difficulty levels to cater to typists of all skill sets.</p>
+                <p>We believe that efficient typing is a fundamental skill in today's digital age. Our interactive tests, real-time feedback, and progress tracking tools are designed to make your learning journey engaging and effective.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-time Feedback</h3>
+                        <p>See your WPM, accuracy, and errors as you type.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your improvement with detailed result history.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Customizable Tests</h3>
+                        <p>Choose your duration and difficulty for tailored practice.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Diverse Texts</h3>
+                        <p>Practice with a wide range of engaging and useful texts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resetpassword" class="page-section">
+        <div class="auth-container">
+            <div class="auth-form">
+                <h2>Reset Password</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="reset-email">Email</label>
+                        <input type="email" id="reset-email" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Reset Link</button>
+                </form>
+                <p style="margin-top: 1rem; color: rgba(255,255,255,0.6);">
+                    Remember your password? <a href="login.html" style="color: #00ff88;">Login here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
